@@ -1,0 +1,11 @@
+---
+- name: download percona package deb
+  get_url:
+    url: "https://repo.percona.com/apt/percona-release_0.1-3.jessie_all.deb"
+    dest: "/tmp/percona-release_0.1-3.jessie_all.deb"
+- name: install percona deb
+  command: "dpkg -i /tmp/percona-release_0.1-3.jessie_all.deb"
+- name: install percona server
+  apt: "pkg=percona-server-server-5.5 state=latest update_cache=yes"
+- name: setup percona server
+  script: "configure_percona.sh '{{ percona_root_password }}' creates=/tmp/configure_percona_done"
