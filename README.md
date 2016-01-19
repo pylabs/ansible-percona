@@ -10,6 +10,11 @@ Role Variables
 percona_root_password: YOUR_PERCONA_SERVER_ROOT_PASSWORD
 ```
 
+Dependencies
+------------
+
+- evannook.sysbase
+
 Example Playbook
 ----------------
 
