@@ -1,17 +1,17 @@
 galaxy_info:
-  author: Evan Nook
+  author: William Wu
   description: Install and configure Percona server
-  company: InnoNook
+  company: PyLabs
   license: MIT
   min_ansible_version: 2.0
   platforms:
   - name: Debian
     versions:
-    - jessie
+    - stretch
   galaxy_tags:
     - percona
     - mysql
     - database
     - debian
 dependencies:
-  - evannook.sysbase
+  - pylabs.sysbase

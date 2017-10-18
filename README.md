@@ -13,14 +13,14 @@ percona_root_password: YOUR_PERCONA_SERVER_ROOT_PASSWORD
 Dependencies
 ------------
 
-- evannook.sysbase
+- pylabs.sysbase
 
 Example Playbook
 ----------------
 
 ```yaml
   roles:
-    - role: evannook.percona
+    - role: pylabs.percona
       percona_root_password: YOUR_PERCONA_SERVER_ROOT_PASSWORD
 ```
 
@@ -32,4 +32,4 @@ MIT
 Author Information
 ------------------
 
-Evan Nook
+William Wu
