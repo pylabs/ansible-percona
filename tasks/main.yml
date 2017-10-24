@@ -10,7 +10,5 @@
     apt: "pkg=percona-server-server-5.7 state=latest update_cache=yes"
   - name: setup percona server
     script: "configure_percona.sh '{{ percona_root_password }}'"
-    args:
-      creates: "/tmp/configure_percona_done"
   tags:
     - percona

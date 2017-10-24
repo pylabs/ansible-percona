@@ -9,4 +9,3 @@ killall mysqld
 sleep 5
 systemctl start mysql.service
 mysql -uroot -p"$1" <<<'DROP DATABASE IF EXISTS test'
-touch /tmp/configure_percona_done
