@@ -8,4 +8,5 @@ sleep 5
 killall mysqld
 sleep 5
 systemctl start mysql.service
+rm -f /tmp/reset_mysql
 mysql -uroot -p"$1" <<<'DROP DATABASE IF EXISTS test'
