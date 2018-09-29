@@ -22,7 +22,8 @@ Example Playbook
 ```yaml
   roles:
     - role: pylabs.percona
-      percona_root_password: YOUR_PERCONA_SERVER_ROOT_PASSWORD
+  vars:
+    percona_root_password: YOUR_PERCONA_SERVER_ROOT_PASSWORD
 ```
 
 License
