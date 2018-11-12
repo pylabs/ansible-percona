@@ -1,4 +1,5 @@
 galaxy_info:
+  role_name: percona
   author: William Wu
   description: Install and configure Percona server
   company: PyLabs
