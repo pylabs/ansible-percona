@@ -1,21 +1,9 @@
 ---
 - block:
-  - name: download percona package deb
-    get_url:
-      url: "https://repo.percona.com/apt/percona-release_0.1-5.stretch_all.deb"
-      dest: "/tmp/percona-release_0.1-5.stretch_all.deb"
-  - name: install percona deb
-    command: "dpkg -i /tmp/percona-release_0.1-5.stretch_all.deb"
+  - name: install percona package deb
+    apt:
+      deb: "https://repo.percona.com/apt/percona-release_0.1-6.stretch_all.deb"
   - name: install percona server
     apt: "pkg=percona-server-server-5.7 state=latest update_cache=yes"
-  - name: set bind address in mysql config
-    template:
-      src: "bindaddress.cnf.j2"
-      dest: "/etc/mysql/conf.d/bindaddress.cnf"
-      owner: "root"
-      group: "root"
-      mode: "0644"
-  - name: setup percona server
-    script: "configure_percona.sh '{{ percona_root_password }}'"
   tags:
     - percona
