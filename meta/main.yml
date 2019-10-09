@@ -8,7 +8,8 @@ galaxy_info:
   platforms:
   - name: Debian
     versions:
-    - stretch
+    - Buster
+    - 10
   galaxy_tags:
     - percona
     - mysql
