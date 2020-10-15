@@ -4,7 +4,7 @@
     apt:
       deb: "https://repo.percona.com/apt/percona-release_latest.buster_all.deb"
   - name: enable percona repo
-    command: "percona-release setup ps80"
+    command: "percona-release setup -y ps80"
   - name: install percona server
     apt: "pkg=percona-server-server state=latest update_cache=yes"
   tags:
