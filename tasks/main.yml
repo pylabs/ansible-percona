@@ -1,11 +1,19 @@
 ---
 - block:
+  - name: install required tools mentioned in percona docs
+    ansible.builtin.apt:
+      pkg:
+        - curl
+        - gnupg2
+        - lsb-release
   - name: install percona package deb
     ansible.builtin.apt:
-      deb: "https://repo.percona.com/apt/percona-release_latest.buster_all.deb"
+      deb: "https://repo.percona.com/apt/percona-release_latest.generic_all.deb"
+  - name: update apt cache
+    ansible.builtin.apt: "update_cache=yes"
   - name: enable percona repo
     ansible.builtin.command: "percona-release setup -y ps80"
   - name: install percona server
-    ansible.builtin.apt: "pkg=percona-server-server state=latest update_cache=yes"
+    ansible.builtin.apt: "pkg=percona-server-server"
   tags:
     - percona
